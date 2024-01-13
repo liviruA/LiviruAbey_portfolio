@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 /* General */
 * {
     margin: 0;
@@ -33,16 +32,27 @@ nav, .menu-links{
     display: flex;
 }
 
+.menu-box{
+    display: flex;
+    position: sticky;
+    background-color: black;
+    width: 100vw;
+    height: 13vh;
+    z-index: 10;
+}
+
 .logo{
+    position: fixed;
     justify-content: space-around;
     align-items:center;
     color: white;
-    font-size: 8vw;
+    font-size: 400%;
     font-weight: 900;
     padding-top: 10px;
     padding-left: 10px;
-    background-image: radial-gradient(circle at top left,white,black 70%); 
+    background-image: radial-gradient(circle at top left,white,black 50%); 
     cursor: default;
+    user-select: none;
 }
 
 .logo:hover{
@@ -54,7 +64,7 @@ nav, .menu-links{
     justify-content: space-around;
     align-items: center;
     height: 15vh;
-    top: 7vh;
+    top: 35px;
     gap: 50px;
     list-style: none;
     font-size: 20px;
@@ -171,7 +181,7 @@ a{
     height: 100vh;
     width: 40%;
     z-index: 0;
-    transition: all 0.4s;
+    transition: right 0.4s;
 }
 
 .hamburger-links {
@@ -211,7 +221,7 @@ a{
     background-color: #ff1493;
     transform: scaleX(0);
     transform-origin: bottom middle;
-    width: 100%;
+    width: 50%;
     height: 2px;
     margin-bottom: 13vw;
 }
@@ -221,6 +231,198 @@ a{
     transform-origin: bottom middle;
 }
 
+/* Introduction */
+
+#intro{
+    display: flex;
+    margin-top: 6vh;
+    height: 96vh;
+}
+
+.Profile-picture{
+    display: flex;
+    height: 80vh;
+    width: 40vw;
+    overflow: hidden;
+    justify-content: left;
+    position: sticky;
+    z-index: 1;
+    left: 5vw;
+}
+
+.picture {
+    position: relative;
+    left: 5vw;
+    user-select: none;
+}
 
 
+.pic-floats{
+    display: flex;
+    position: absolute;
+    line-height: 10vh;
+    width: 80vw;
+    z-index: -1;
+    font-size: 5vh;
+    word-spacing: 10vh;
+    animation: pic-floats 10s infinite linear;
+    cursor: none;
+    user-select: none;
+    left: 5vw;
+}
 
+.fade{
+    display:flex;
+    position: absolute;
+    height: 100vh;
+    width: 40vw;
+    z-index: -1;
+    background-color:transparent;
+    border-style: solid;
+    border-width: 50px;
+    border-image: linear-gradient(
+        to right, 
+        black, 
+        transparent
+      ) 1 100%;;
+}  
+
+.pic-floats p {
+    margin-right: 6vh;
+}
+
+.cursor{
+    display:flex;
+    position: absolute;
+    width: 4px;
+    height: 25rem;
+    right: 0;
+    background-color: white;
+    animation: cursor 600ms infinite linear;
+}
+
+@keyframes cursor {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+    
+}
+
+@keyframes pic-floats {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+    
+}
+
+.Intro-paragraph{
+    display: inline;
+    position: relative;
+    font-size: 200%;
+    color: white;
+    height: 50vh;
+    top: 20%;
+    left: 20%;
+    
+}
+
+.intro-p{
+    position: relative;
+    font-size: 150%;
+    color: white;
+}
+
+.intro-h1{
+    position: relative;
+    font-size: 250%;
+}
+
+.buttons{
+    display: block;
+    position: relative;
+    
+}
+.resume {
+    position: relative;
+    font-weight: 600;
+    display: inline;
+    height: 3rem;
+    width: 10rem;
+    font-size: 100%;
+    background-color:#ff1493;
+    border-style:double;
+    border-radius: 20px;
+    font-family: 'League Spartan', sans-serif;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.resume:hover{
+    background-color: white;
+    color:#ff1493;
+    width: 11rem;
+}
+
+.contact{
+    font-size: 100%;
+    position: relative;
+    font-weight:600;
+    display: inline;
+    height: 3rem;
+    width: 10rem;
+    font-size: 100%;
+    background-color: white;
+    border-style:double;
+    border-radius: 20px;
+    font-family: 'League Spartan', sans-serif;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color:#ff1493;
+    color:white;
+    width: 11rem;
+}
+
+.social {
+    display: block;
+    position: relative;
+    margin-top: 25px;
+}
+
+.linkedin{
+    display: inline;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.github{
+    position: relative;
+    display: inline;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+#about{
+    display: flex;
+    height: 96vh;
+    background-color: white;
+    border-style: solid;
+    border-top-width: 50px;
+    border-top-color: pink;
+    border-image: linear-gradient(
+        to top,
+        black, 
+        white
+      ) 1 100%;;
+}
